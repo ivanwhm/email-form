@@ -1,6 +1,13 @@
 <div class="container">
   <form #emailForm="ngForm">
-    <input required [(ngModel)]="email" type="text" name="email" class="input" />
+    <input
+      required
+      pattern=".+@.+\..+"
+      [(ngModel)]="email"
+      type="email"
+      name="email"
+      class="input"
+    />
   </form>
 </div>
 <div class="container">
