@@ -1,5 +1,5 @@
 <div class="container">
-  <form #emailForm="ngForm">
+  <form #emailForm="ngForm" (ngSubmit)="onSubmit()">
     <input
       #emailControl="ngModel"
       required
@@ -13,6 +13,7 @@
       <div *ngIf="emailControl.errors.required">You must enter an email.</div>
       <div *ngIf="emailControl.errors.pattern">You must enter an valid email.</div>
     </ng-container>
+    <button [disabled]="emailControl.invalid" class="button is-primary">Submit</button>
   </form>
 </div>
 <div class="container">
